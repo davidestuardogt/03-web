@@ -5,40 +5,67 @@
   box-sizing: border-box;
 }
 
+/* Todas las imágenes responsivas */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Estilos generales */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #1e1e1e;
-  color: #f0f0f0;
+  background-color: #F5F5F5; /* gris claro */
+  color: #4A4A4A; /* gris oscuro para texto */
 }
 
+/* Menú */
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* logo a la izquierda, hamburguesa a la derecha */
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #2a2a2a;
-  border-bottom: 1px solid #3a3a3a;
-  flex-wrap: wrap;
+  background-color: #0B2545; /* azul marino */
+  border-bottom: 1px solid #D4AF37; /* dorado suave */
+  position: relative;
 }
 
+/* Menú visible en escritorio */
 .nav-links {
   list-style: none;
   display: flex;
   gap: 15px;
 }
 
-.nav-links a {
+/* Estilos links */
+.nav-links li a {
   text-decoration: none;
-  color: white;
+  color: #FFFFFF; /* blanco puro */
+  transition: color 0.3s;
 }
 
-.nav-links a:hover {
-  color: #00cfff;
+.nav-links li a:hover {
+  color: #D4AF37; /* dorado suave */
 }
 
+/* Botón hamburguesa oculto por defecto */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #FFFFFF; /* blanco */
+  cursor: pointer;
+}
+
+.close-menu {
+  display: none;
+}
+
+/* Logo a la izquierda */
 .logo {
   font-size: 1.5rem;
-  color: #00cfff;
+  color: #D4AF37; /* dorado */
   font-weight: bold;
 }
 
@@ -51,12 +78,12 @@ body {
 
 .menu li a {
   text-decoration: none;
-  color: #ccc;
+  color: #4A4A4A; /* gris oscuro */
   transition: color 0.3s;
 }
 
 .menu li a:hover {
-  color: #00cfff;
+  color: #D4AF37; /* dorado suave */
 }
 
 .presentacion {
@@ -81,37 +108,41 @@ body {
 .sobre-mi-texto h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #00cfff;
+  color: #0B2545; /* azul marino */
 }
 
 .sobre-mi-texto p {
   font-size: 1.2rem;
-  color: #ccc;
+  color: #4A4A4A; /* gris oscuro */
 }
 
 .sobre-mi-imagen img {
   width: 200px;
   border-radius: 50%;
-  border: 3px solid #00cfff;
+  border: 3px solid #D4AF37; /* dorado */
 }
 
+/* Ajuste responsivo real del carrusel */
 .carrousel {
   position: relative;
   max-width: 800px;
   margin: 2rem auto;
   overflow: hidden;
+  width: 100%; /* Para que sea responsivo */
+  background-color: #FFFFFF; /* blanco para contraste */
 }
 
 .slider {
   display: flex;
   transition: transform 0.5s ease-in-out;
+  width: 100%;
 }
 
 .slide {
   min-width: 100%;
-  text-align: center;
   display: none;
   flex-shrink: 0;
+  text-align: center;
 }
 
 .slide.active {
@@ -119,29 +150,33 @@ body {
 }
 
 .slide img {
-  max-width: 100%;
+  width: 100%;
+  height: auto;
   border-radius: 12px;
+  object-fit: contain;
 }
 
-.slide p {
-  margin-top: 0.5rem;
-  color: #bbb;
-}
-
+/* Botones de navegación */
 .prev, .next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 207, 255, 0.3);
+  background-color: rgba(212, 175, 55, 0.7); /* dorado suave semitransparente */
   border: none;
-  color: white;
-  padding: 0.5rem 1rem;
+  color: #0B2545; /* azul marino */
   cursor: pointer;
   border-radius: 50%;
-}
-
-.prev:hover, .next:hover {
-  background-color: #00cfff;
+  z-index: 10;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  padding: 0;
 }
 
 .prev {
@@ -152,15 +187,27 @@ body {
   right: 10px;
 }
 
+.prev:hover, .next:hover {
+  background-color: #D4AF37; /* dorado suave */
+  color: #FFFFFF; /* blanco */
+}
+
+/* Texto bajo imagen */
+.slide p {
+  margin-top: 0.5rem;
+  color: #4A4A4A; /* gris oscuro */
+  padding: 0 1rem;
+}
+
 footer {
-  background-color: #2a2a2a;
+  background-color: #0B2545; /* azul marino */
   text-align: center;
   padding: 2rem 1rem;
-  border-top: 1px solid #3a3a3a;
+  border-top: 1px solid #D4AF37; /* dorado suave */
 }
 
 footer p {
-  color: #999;
+  color: #D4AF37; /* dorado suave */
   margin-bottom: 1rem;
 }
 
@@ -180,23 +227,99 @@ footer p {
   filter: none;
 }
 
+/* Media query para móviles */
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row; /* mantenemos fila */
+    justify-content: space-between; /* logo a la izquierda, botón a la derecha */
+    align-items: center; /* centrar verticalmente */
   }
 
-  .carousel img {
+  /* Ocultar menú horizontal */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: #0B2545; /* azul marino */
+    padding-top: 3rem;
+    gap: 1.5rem;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    transform: translateX(100%);
+  }
+
+  /* Mostrar menú cuando está activo */
+  .nav-links.active {
+    transform: translateX(0);
+    display: flex;
+  }
+
+  /* Estilo del botón cerrar */
+  .close-menu {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-right: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Mostrar la X solo en pantallas pequeñas (móviles) */
+  .close-menu {
+    display: block;
+  }
+
+  /* Mostrar botón hamburguesa a la derecha */
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+    color: #FFFFFF;
+  }
+
+  .carrousel {
+    max-width: 100%;
+  }  
+  
+  .slide {
+    display: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .slide img {
+    object-fit: contain;
+  }
+
+  .slide.active {
+    display: block;
+  }
+
+  .carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .carousel-container img {
     width: 100%;
     height: auto;
     object-fit: cover;
   }
 
-  .menu {
-    flex-direction: column;
-    gap: 0.5rem;
-    width: 100%;
-    margin-top: 1rem;
+  .prev, .next {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+    padding: 0;
+    line-height: 35px;
   }
 
   .sobre-mi-contenido {

@@ -29,3 +29,25 @@ prevBtn.addEventListener('click', prevSlide);
 // Auto-play opcional
 setInterval(nextSlide, 7000);
 
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+const closeMenuBtn = document.querySelector('.close-menu');
+
+
+// JavaScript para alternar menú
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+// cerrar menú al seleccionar un enlace
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+  });
+});
+
+// Cerrar el menú con la X
+closeMenuBtn.addEventListener('click', () => {
+  navLinks.classList.remove('active');
+});
+
