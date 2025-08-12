@@ -28,3 +28,8 @@ prevBtn.addEventListener('click', prevSlide);
 
 // Auto-play opcional
 setInterval(nextSlide, 7000);
+
+// Para el menú
+document.getElementById("menu-toggle").addEventListener("click", function() {
+  document.getElementById("nav-links").classList.toggle("show");
+});

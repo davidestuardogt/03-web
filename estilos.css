@@ -21,10 +21,34 @@ body {
   flex-wrap: wrap;
 }
 
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-links a:hover {
+  color: #00cfff;
+}
+
 .logo {
   font-size: 1.5rem;
   color: #00cfff;
   font-weight: bold;
+}
+
+
+/* ======== Botón hamburguesa oculto en escritorio ======== */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
 }
 
 .menu {
@@ -157,7 +181,7 @@ footer p {
 .social-icons img {
   width: 50px;
   height: 50px;
-  filter: grayscale(100%) brightness(150%);
+  filter: grayscale(100%) brightness(150%) invert(1);
   transition: filter 0.3s;
 }
 
@@ -169,6 +193,26 @@ footer p {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+    .nav-links {
+    display: none; /* Oculto por defecto */
+    flex-direction: column;
+    background: #222;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .nav-links.show {
+    display: flex; /* Aparece al hacer clic */
+  }
+
+  .menu-toggle {
+    display: block; /* Mostramos botón hamburguesa */
   }
 
   .menu {
