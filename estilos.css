@@ -42,15 +42,6 @@ body {
   font-weight: bold;
 }
 
-
-/* ======== Botón hamburguesa oculto en escritorio ======== */
-.menu-toggle {
-  display: none;
-  font-size: 28px;
-  color: white;
-  cursor: pointer;
-}
-
 .menu {
   list-style: none;
   display: flex;
@@ -195,24 +186,10 @@ footer p {
     align-items: flex-start;
   }
 
-    .nav-links {
-    display: none; /* Oculto por defecto */
-    flex-direction: column;
-    background: #222;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    width: 200px;
-    padding: 10px;
-    border-radius: 5px;
-  }
-
-  .nav-links.show {
-    display: flex; /* Aparece al hacer clic */
-  }
-
-  .menu-toggle {
-    display: block; /* Mostramos botón hamburguesa */
+  .carousel img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
   }
 
   .menu {
