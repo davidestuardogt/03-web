@@ -50,4 +50,3 @@ navLinks.querySelectorAll('a').forEach(link => {
 closeMenuBtn.addEventListener('click', () => {
   navLinks.classList.remove('active');
 });
-
