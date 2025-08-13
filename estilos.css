@@ -244,14 +244,33 @@ footer p {
     right: 0;
     height: 100vh;
     width: 250px;
-    background-color: #0B2545; /* azul marino */
-    padding-top: 3rem;
-    gap: 1.5rem;
     box-shadow: -2px 0 5px rgba(0,0,0,0.3);
     z-index: 1000;
     transition: transform 0.3s ease;
     transform: translateX(100%);
+    background-color: rgba(11, 37, 69, 0.95); /* Azul marino con transparencia */
+    text-align: center; /* Centramos el texto */
+    padding-top: 4rem;
+    gap: 2rem; /* Más espacio entre enlaces */
   }
+
+  .nav-links li {
+  width: 100%;
+}
+
+.nav-links li a {
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  font-weight: 500;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.nav-links li a:hover {
+  color: #D4AF37; /* Dorado suave */
+  transform: scale(1.05);
+}
 
   /* Mostrar menú cuando está activo */
   .nav-links.active {
