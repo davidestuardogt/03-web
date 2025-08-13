@@ -1,3 +1,4 @@
+// Carrusel
 const slides = document.querySelectorAll('.slide');
 const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
@@ -23,30 +24,11 @@ function prevSlide() {
   showSlide(currentSlide);
 }
 
-nextBtn.addEventListener('click', nextSlide);
-prevBtn.addEventListener('click', prevSlide);
+// Solo ejecutar si existe el carrusel
+if (slides.length > 0 && prevBtn && nextBtn) {
+  nextBtn.addEventListener('click', nextSlide);
+  prevBtn.addEventListener('click', prevSlide);
 
-// Auto-play opcional
-setInterval(nextSlide, 7000);
-
-const menuToggle = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.nav-links');
-const closeMenuBtn = document.querySelector('.close-menu');
-
-
-// JavaScript para alternar menú
-menuToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-});
-
-// cerrar menú al seleccionar un enlace
-navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('active');
-  });
-});
-
-// Cerrar el menú con la X
-closeMenuBtn.addEventListener('click', () => {
-  navLinks.classList.remove('active');
-});
+  // Auto-play opcional
+  setInterval(nextSlide, 7000);
+}

@@ -212,7 +212,7 @@ section {
   margin: 2rem auto;
   overflow: hidden;
   width: 100%; /* Para que sea responsivo */
-  background-color: #FFFFFF; /* blanco para contraste */
+  background-color: transparent; /* blanco para contraste */
 }
 
 .slider {
