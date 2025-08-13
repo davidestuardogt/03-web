@@ -290,7 +290,7 @@ footer {
 }
 
 footer p {
-  color: #D4AF37; /* dorado suave */
+  color: #FFFFFF; /* blanco */
   margin-bottom: 1rem;
 }
 
@@ -302,7 +302,7 @@ footer p {
 .social-icons img {
   width: 50px;
   height: 50px;
-  filter: grayscale(100%) brightness(150%) invert(1);
+  filter: grayscale(100%) brightness(150%);
   transition: filter 0.3s;
 }
 
