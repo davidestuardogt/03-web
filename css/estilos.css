@@ -1,0 +1,495 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Todas las imágenes responsivas */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Estilos generales */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #F5F5F5; /* gris claro */
+  color: #4A4A4A; /* gris oscuro para texto */
+}
+
+/* Menú */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* logo a la izquierda, hamburguesa a la derecha */
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #0B2545; /* azul marino */
+  border-bottom: 1px solid #D4AF37; /* dorado suave */
+  position: relative;
+}
+
+/* Menú visible en escritorio */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+/* Estilos links */
+.nav-links li a {
+  text-decoration: none;
+  color: #FFFFFF; /* blanco puro */
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #D4AF37; /* dorado suave */
+}
+
+/* Botón hamburguesa oculto por defecto */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #FFFFFF; /* blanco */
+  cursor: pointer;
+}
+
+.close-menu {
+  display: none;
+}
+
+/* Logo a la izquierda */
+.logo {
+  font-size: 1.5rem;
+  color: #D4AF37; /* dorado */
+  font-weight: bold;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #4A4A4A; /* gris oscuro */
+  transition: color 0.3s;
+}
+
+.menu li a:hover {
+  color: #D4AF37; /* dorado suave */
+}
+
+.presentacion {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.sobre-mi-contenido {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.sobre-mi-texto {
+  max-width: 500px;
+  text-align: left;
+}
+
+.sobre-mi-texto h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #0B2545; /* azul marino */
+}
+
+.sobre-mi-texto p {
+  font-size: 1.2rem;
+  color: #4A4A4A; /* gris oscuro */
+}
+
+/* Secciones reutilizables */
+section {
+  padding: 3rem 1rem;
+}
+
+/* Contenedor general */
+.contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* === Una Columna === */
+.una-columna p {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #4A4A4A; /* gris oscuro */
+  background-color: #FFFFFF;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 2px solid #D4AF37; /* dorado suave */
+}
+
+/* === Dos Columnas === */
+.dos-columnas .contenedor {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.dos-columnas .texto {
+  flex: 1;
+}
+
+.dos-columnas .texto h2 {
+  color: #0B2545; /* azul marino */
+  margin-bottom: 1rem;
+}
+
+.dos-columnas .texto p {
+  font-size: 1.1rem;
+  color: #4A4A4A;
+}
+
+.dos-columnas .imagen {
+  flex: 1;
+  text-align: center;
+}
+
+.dos-columnas .imagen img {
+  max-width: 100%;
+  border-radius: 12px;
+  border: 2px solid #D4AF37;
+}
+
+/* === Tres Columnas === */
+.tres-columnas .contenedor {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.tres-columnas .columna {
+  flex: 1;
+  min-width: 250px;
+  background-color: #FFFFFF;
+  border: 2px solid #D4AF37;
+  border-radius: 12px;
+  text-align: center;
+  padding: 1rem;
+}
+
+.tres-columnas h3 {
+  color: #0B2545;
+  margin-bottom: 1rem;
+}
+
+.tres-columnas img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.sobre-mi-imagen img {
+  width: 200px;
+  border-radius: 50%;
+  border: 3px solid #D4AF37; /* dorado */
+}
+
+/* Ajuste responsivo real del carrusel */
+.carrousel {
+  position: relative;
+  max-width: 800px;
+  margin: 2rem auto;
+  overflow: hidden;
+  width: 100%; /* Para que sea responsivo */
+  background-color: transparent; /* blanco para contraste */
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  display: none;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+/* Botones de navegación */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(212, 175, 55, 0.7); /* dorado suave semitransparente */
+  border: none;
+  color: #0B2545; /* azul marino */
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  padding: 0;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev:hover, .next:hover {
+  background-color: #D4AF37; /* dorado suave */
+  color: #FFFFFF; /* blanco */
+}
+
+/* Texto bajo imagen */
+.slide p {
+  margin-top: 0.5rem;
+  color: #4A4A4A; /* gris oscuro */
+  padding: 0 1rem;
+}
+
+footer {
+  background-color: #0B2545; /* azul marino */
+  text-align: center;
+  padding: 2rem 1rem;
+  border-top: 1px solid #D4AF37; /* dorado suave */
+}
+
+footer p {
+  color: #FFFFFF; /* blanco */
+  margin-bottom: 1rem;
+}
+
+.social-icons a {
+  margin: 0 0.5rem;
+  display: inline-block;
+}
+
+.social-icons img {
+  width: 50px;
+  height: 50px;
+  filter: grayscale(100%) brightness(150%);
+  transition: filter 0.3s;
+}
+
+.social-icons img:hover {
+  filter: none;
+}
+
+/* Información de contacto en sección dos columnas */
+.info-contacto-2col {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.info-contacto-2col > img {
+  width: 80px; /* Imagen de perfil más grande */
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid #D4AF37; /* dorado suave */
+}
+
+.info-contacto-2col div p {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #4A4A4A;
+  margin: 0.5rem 0;
+  font-size: 1.2rem; /* Texto más grande */
+  font-weight: bold;
+}
+
+.info-contacto-2col div p img {
+  width: 50px; /* Iconos grandes */
+  height: 50px;
+}
+
+/* Media query para móviles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row; /* mantenemos fila */
+    justify-content: space-between; /* logo a la izquierda, botón a la derecha */
+    align-items: center; /* centrar verticalmente */
+  }
+
+  /* Ocultar menú horizontal */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    transform: translateX(100%);
+    background-color: rgba(11, 37, 69, 0.95); /* Azul marino con transparencia */
+    text-align: center; /* Centramos el texto */
+    padding-top: 4rem;
+    gap: 2rem; /* Más espacio entre enlaces */
+  }
+
+  .nav-links li {
+  width: 100%;
+}
+
+.nav-links li a {
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  font-weight: 500;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.nav-links li a:hover {
+  color: #D4AF37; /* Dorado suave */
+  transform: scale(1.05);
+}
+
+  /* Mostrar menú cuando está activo */
+  .nav-links.active {
+    transform: translateX(0);
+    display: flex;
+  }
+
+  /* Estilo del botón cerrar */
+  .close-menu {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-right: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Mostrar la X solo en pantallas pequeñas (móviles) */
+  .close-menu {
+    display: block;
+  }
+
+  /* Mostrar botón hamburguesa a la derecha */
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+    color: #FFFFFF;
+  }
+
+  .dos-columnas .contenedor,
+  .tres-columnas .contenedor {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .carrousel {
+    max-width: 100%;
+  }  
+  
+  .slide {
+    display: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .slide img {
+    object-fit: contain;
+  }
+
+  .slide.active {
+    display: block;
+  }
+
+  .carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .carousel-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .prev, .next {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+    padding: 0;
+    line-height: 35px;
+  }
+
+  .sobre-mi-contenido {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .sobre-mi-texto {
+    text-align: center;
+  }
+
+  .sobre-mi-imagen img {
+    width: 150px;
+  }
+
+  .presentacion {
+    padding: 2rem 1rem;
+  }
+
+  .slide p {
+    padding: 0 1rem;
+  }
+
+  .info-contacto-2col {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .info-contacto-2col div p {
+    justify-content: center;
+    font-size: 1.1rem;
+  }
+
+}
