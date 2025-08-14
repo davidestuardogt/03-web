@@ -1,0 +1,110 @@
+/* =========================================================
+   CARRUSEL – RESPONSIVE (IMAGEN COMPLETA)
+   Muestra toda la imagen (800x450px, 16:9) sin recortes
+   y sin espacios vacíos en móvil.
+   ========================================================= */
+
+/* ----- Contenedor principal del carrusel ----- */
+.carrousel {
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+  margin: 2rem auto;
+  border-radius: 12px;
+  overflow: hidden; /* 🔹 esto recorta todo, incluyendo la imagen */
+  background-color: transparent;
+
+}
+
+/* ----- Pista de slides ----- */
+.slider {
+  position: relative;
+  width: 100%;
+}
+
+/* ----- Cada slide ----- */
+.slide {
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+  border-radius: inherit;
+}
+
+/* Slide activo */
+.slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ----- Imagen del slide ----- */
+.slide img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border: 2px solid #D4AF37;
+  border-radius: 12px; /* 🔹 fuerza el borde en la imagen */
+}
+
+/* ----- Texto del slide ----- */
+.slide > p {
+  margin: 0.5rem 0 0;
+  padding: 0.5rem 1rem;
+  color: #4A4A4A;
+  font-size: 1rem;
+  line-height: 1.4;
+  text-align: center;
+  background: none;
+  border: none;
+}
+
+/* ----- Botones prev/next ----- */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(212, 175, 55, 0.9);
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.5rem;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  z-index: 2;
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+.prev:hover, .next:hover {
+  background-color: #0B2545;
+  transform: translateY(-50%) scale(1.08);
+}
+
+/* =========================================================
+   📱 Responsive
+   ========================================================= */
+@media (max-width: 768px) {
+  .slide img {
+    max-height: 300px;  /* límite de altura en móviles */
+  }
+
+  .prev, .next {
+    width: 38px;
+    height: 38px;
+    font-size: 1.25rem;
+  }
+
+  .slide > p {
+    font-size: 0.9rem;
+  }
+}

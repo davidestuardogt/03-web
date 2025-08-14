@@ -205,92 +205,17 @@ section {
   border: 3px solid #D4AF37; /* dorado */
 }
 
-/* Ajuste responsivo real del carrusel */
-.carrousel {
-  position: relative;
-  max-width: 800px;
-  margin: 2rem auto;
-  overflow: hidden;
-  width: 100%; /* Para que sea responsivo */
-  background-color: transparent; /* blanco para contraste */
-}
 
-.slider {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: 100%;
-}
-
-.slide {
-  min-width: 100%;
-  display: none;
-  flex-shrink: 0;
-  text-align: center;
-}
-
-.slide.active {
-  display: block;
-}
-
-.slide img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  object-fit: contain;
-}
-
-/* Botones de navegación */
-.prev, .next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(212, 175, 55, 0.7); /* dorado suave semitransparente */
-  border: none;
-  color: #0B2545; /* azul marino */
-  cursor: pointer;
-  border-radius: 50%;
-  z-index: 10;
-  box-shadow: 0 0 5px rgba(0,0,0,0.2);
-  width: 40px;
-  height: 40px;
-  font-size: 1.5rem;
-  
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-  padding: 0;
-}
-
-.prev {
-  left: 10px;
-}
-
-.next {
-  right: 10px;
-}
-
-.prev:hover, .next:hover {
-  background-color: #D4AF37; /* dorado suave */
-  color: #FFFFFF; /* blanco */
-}
-
-/* Texto bajo imagen */
-.slide p {
-  margin-top: 0.5rem;
-  color: #4A4A4A; /* gris oscuro */
-  padding: 0 1rem;
-}
-
+/* Footer */
 footer {
-  background-color: #0B2545; /* azul marino */
+  background-color: #0B2545;
   text-align: center;
   padding: 2rem 1rem;
-  border-top: 1px solid #D4AF37; /* dorado suave */
+  border-top: 1px solid #D4AF37;
 }
 
 footer p {
-  color: #FFFFFF; /* blanco */
+  color: #FFFFFF;
   margin-bottom: 1rem;
 }
 
@@ -319,10 +244,10 @@ footer p {
 }
 
 .info-contacto-2col > img {
-  width: 80px; /* Imagen de perfil más grande */
+  width: 80px;
   height: 80px;
   border-radius: 50%;
-  border: 2px solid #D4AF37; /* dorado suave */
+  border: 2px solid #D4AF37;
 }
 
 .info-contacto-2col div p {
@@ -331,24 +256,24 @@ footer p {
   gap: 0.8rem;
   color: #4A4A4A;
   margin: 0.5rem 0;
-  font-size: 1.2rem; /* Texto más grande */
+  font-size: 1.2rem;
   font-weight: bold;
 }
 
 .info-contacto-2col div p img {
-  width: 50px; /* Iconos grandes */
+  width: 50px;
   height: 50px;
 }
 
-/* Media query para móviles */
+/* === Media query para móviles === */
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: row; /* mantenemos fila */
-    justify-content: space-between; /* logo a la izquierda, botón a la derecha */
-    align-items: center; /* centrar verticalmente */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  /* Ocultar menú horizontal */
+  /* Menú móvil */
   .nav-links {
     display: none;
     flex-direction: column;
@@ -361,37 +286,35 @@ footer p {
     z-index: 1000;
     transition: transform 0.3s ease;
     transform: translateX(100%);
-    background-color: rgba(11, 37, 69, 0.95); /* Azul marino con transparencia */
-    text-align: center; /* Centramos el texto */
+    background-color: rgba(11, 37, 69, 0.95);
+    text-align: center;
     padding-top: 4rem;
-    gap: 2rem; /* Más espacio entre enlaces */
+    gap: 2rem;
   }
 
   .nav-links li {
-  width: 100%;
-}
+    width: 100%;
+  }
 
-.nav-links li a {
-  color: #FFFFFF;
-  font-size: 1.2rem;
-  font-weight: 500;
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  transition: color 0.3s, transform 0.2s;
-}
+  .nav-links li a {
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    font-weight: 500;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s, transform 0.2s;
+  }
 
-.nav-links li a:hover {
-  color: #D4AF37; /* Dorado suave */
-  transform: scale(1.05);
-}
+  .nav-links li a:hover {
+    color: #D4AF37;
+    transform: scale(1.05);
+  }
 
-  /* Mostrar menú cuando está activo */
   .nav-links.active {
     transform: translateX(0);
     display: flex;
   }
 
-  /* Estilo del botón cerrar */
   .close-menu {
     align-self: flex-end;
     background: none;
@@ -401,14 +324,9 @@ footer p {
     cursor: pointer;
     margin-right: 1rem;
     margin-bottom: 2rem;
-  }
-
-  /* Mostrar la X solo en pantallas pequeñas (móviles) */
-  .close-menu {
     display: block;
   }
 
-  /* Mostrar botón hamburguesa a la derecha */
   .menu-toggle {
     display: block;
     margin-left: auto;
@@ -419,45 +337,6 @@ footer p {
   .tres-columnas .contenedor {
     flex-direction: column;
     align-items: center;
-  }
-
-  .carrousel {
-    max-width: 100%;
-  }  
-  
-  .slide {
-    display: none;
-    width: 100%;
-    height: auto;
-  }
-
-  .slide img {
-    object-fit: contain;
-  }
-
-  .slide.active {
-    display: block;
-  }
-
-  .carousel-container {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .carousel-container img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-
-  .prev, .next {
-    width: 35px;
-    height: 35px;
-    font-size: 1.2rem;
-    padding: 0;
-    line-height: 35px;
   }
 
   .sobre-mi-contenido {
@@ -478,21 +357,16 @@ footer p {
     padding: 2rem 1rem;
   }
 
-  .slide p {
-    padding: 0 1rem;
-  }
-
-
-/* Información de Contacto en la página de contacto */
+  /* Información de Contacto en la página de contacto */
   .info-contacto-2col {
     flex-direction: column;
-    align-items: flex-start; /* Alinea a la izquierda */
-    padding-left: 10px; /* Espacio prudente desde el borde */
+    align-items: flex-start;
+    padding-left: 10px;
   }
 
   .info-contacto-2col > img {
     display: block;
-    margin: 0 auto 1rem auto; /* Centrado horizontal con margen inferior */
+    margin: 0 auto 1rem auto;
   }
 
   .info-contacto-2col div {
@@ -500,8 +374,7 @@ footer p {
   }
 
   .info-contacto-2col div p {
-    justify-content: flex-start; /* Alinea texto con icono */
+    justify-content: flex-start;
     font-size: 1.1rem;
   }
-
 }
