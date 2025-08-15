@@ -265,6 +265,20 @@ footer p {
   height: 50px;
 }
 
+/* Para tener listas sin la necesidad de un ul ni un li */
+.detalle-lita {
+  margin-bottom: 0.5rem;
+  color: #4A4A4A;
+  font-size: 1rem;
+}
+
+.detalle-lista::first-letter {
+  color: #D4AF37; /* color dorado para el check */
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+
 /* === Media query para móviles === */
 @media (max-width: 768px) {
   .navbar {
