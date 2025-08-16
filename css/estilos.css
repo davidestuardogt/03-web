@@ -365,6 +365,39 @@ footer p {
   transform: scale(1.1);
 }
 
+/* Sección de videos */
+.social-videos {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #F5F5F5; /* gris claro */
+  border-radius: 16px;
+  margin: 40px auto;
+  max-width: 1200px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.social-videos h2 {
+  color: #0B2545; /* azul marino */
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.video-grid iframe,
+.video-grid blockquote {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
 /* === Media query para móviles === */
 @media (max-width: 768px) {
   .navbar {
