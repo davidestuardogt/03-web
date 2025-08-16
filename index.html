@@ -123,12 +123,16 @@
     </div>
   </footer>
 
-<!-- Coloca esto AL FINAL del <body>, una sola vez en la página 
-     es quien maneja la apliación de imágenes -->
-<div id="lightbox" aria-hidden="true" role="dialog" tabindex="-1">
-  <button class="lightbox-close" aria-label="Cerrar">&times;</button>
-  <img class="lightbox-content" id="lightbox-img" alt="">
-</div>
+  <!-- Coloca esto AL FINAL del <body>, una sola vez en la página 
+      es quien maneja la apliación de imágenes -->
+  <div id="lightbox" aria-hidden="true" role="dialog" tabindex="-1">
+    <button class="lightbox-close" aria-label="Cerrar">&times;</button>
+    <div class="lightbox-controls">
+      <button class="zoom-btn" id="zoom-in" aria-label="Ampliar">+</button>
+      <button class="zoom-btn" id="zoom-out" aria-label="Reducir">−</button>
+    </div>
+    <img class="lightbox-content" id="lightbox-img" alt="">
+  </div>
 
 </body>
 
