@@ -10,6 +10,7 @@
   <link rel="shortcut icon" href="assets/favicon.svg">  <!-- Logo como favicon -->
   <script defer src="js/menu.js"></script>
   <script defer src="js/carrousel.js"></script>
+  <script src="js/lightbox.js"></script>
 </head>
 <body>
   <header>
@@ -121,6 +122,14 @@
       <a href="https://www.tiktok.com/@davidestuardo.gt" target="_blank"><img src="assets/icon-tiktok.svg" alt="GitHub"></a>
     </div>
   </footer>
+
+<!-- Coloca esto AL FINAL del <body>, una sola vez en la página 
+     es quien maneja la apliación de imágenes -->
+<div id="lightbox" aria-hidden="true" role="dialog" tabindex="-1">
+  <button class="lightbox-close" aria-label="Cerrar">&times;</button>
+  <img class="lightbox-content" id="lightbox-img" alt="">
+</div>
+
 </body>
 
 

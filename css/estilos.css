@@ -278,6 +278,92 @@ footer p {
   font-size: 1.1rem;
 }
 
+/* === Lightbox – base (colocar en el CSS general, fuera del media query) === */
+
+/* Miniatura con puntero de zoom */
+.zoomable {
+  cursor: zoom-in;
+  border-radius: 12px;
+  transition: transform 0.25s ease;
+}
+.zoomable:hover { transform: scale(1.02); }
+
+/* Overlay del lightbox */
+#lightbox {
+  position: fixed;
+  inset: 0; /* top/right/bottom/left = 0 */
+  display: grid;
+  place-items: center;
+  background-color: rgba(11, 37, 69, 0.9); /* azul marino con transparencia */
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  cursor: zoom-out; /* puntero para salir */
+}
+
+/* Estado abierto */
+#lightbox.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Imagen dentro del visor */
+.lightbox-content {
+  max-width: min(95vw, 1200px);
+  max-height: 85vh;
+  border-radius: 12px;
+  border: 2px solid #D4AF37; /* dorado */
+  box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+  background: #FFFFFF;
+  display: block;
+}
+
+/* Botón de cierre (evita usar .close para no chocar con otros estilos) */
+.lightbox-close {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+  font-size: 40px;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.15s ease;
+}
+.lightbox-close:hover { color: #D4AF37; transform: scale(1.08); }
+.lightbox-close:focus-visible { outline: 3px solid #D4AF37; outline-offset: 2px; }
+
+/* Contenedor de botones del lightbox */
+.lightbox-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  display: flex;
+  gap: 10px;
+  z-index: 10000;
+}
+
+/* Botones de zoom */
+.zoom-btn {
+  background-color: #D4AF37; /* dorado premium */
+  color: #0B2545; /* azul marino */
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
+.zoom-btn:hover {
+  background-color: #b9982f;
+  transform: scale(1.1);
+}
 
 /* === Media query para móviles === */
 @media (max-width: 768px) {
@@ -391,4 +477,28 @@ footer p {
     justify-content: flex-start;
     font-size: 1.1rem;
   }
+
+  /* Lightbox responsive */
+
+  .lightbox-content {
+    max-width: 95vw;
+    max-height: 75vh;
+  }
+  .lightbox-close {
+    top: 12px;
+    right: 16px;
+    font-size: 34px;
+  }
+
+  /* Botones de zoom en lightbox */
+  .lightbox-controls {
+    bottom: 15px;
+    right: 15px;
+  }
+  .zoom-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
 }

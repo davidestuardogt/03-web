@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../css/estilos.css">
   <link rel="shortcut icon" href="../assets/favicon.svg">  <!-- Logo como favicon -->
   <script defer src="../js/menu.js"></script>
+  <script src="../js/lightbox.js"></script>
 </head>
 <body>
   <header>
@@ -63,9 +64,9 @@
         a estudiantes y docentes para fomentar el pensamiento lógico y el gusto por las matemáticas.
       </p><br>
           <p class="detalle-lista">✔ <b>Modalidad:</b> Virtual</p>
-          <p class="detalle-lista">✔ Duración: 120 horas</p>
-          <p class="detalle-lista">✔ Fecha: Junio a Noviembre de 2021</p>
-          <p class="detalle-lista">✔ Coordinador general del programa</p>
+          <p class="detalle-lista">✔ <b>Duración:</b> 120 horas</p>
+          <p class="detalle-lista">✔ <b>Fecha:</b> Junio a Noviembre de 2021</p>
+          <p class="detalle-lista">✔ <b>Coordinador general del programa</b></p>
         </div>
         <div class="columna imagen">
           <img src="../assets/banner06.png" alt="Imagen de ejemplo">
@@ -73,10 +74,10 @@
       </div>
     </section>
 
-        <!-- Sección Una Columna -->
+    <!-- Sección Una Columna -->
     <section class="una-columna">
-      <div class="contenedor">
-        <center><a href="../assets/proyect01.png"><img src="../assets/proyect01.png" width="800px"></a></center>
+      <div class="contenedor" style="text-align:center;">
+        <center><img src="../assets/proyect01.png" alt="Proyecto imagen" class="zoomable" width="800"></center>
       </div>
     </section>
 
@@ -90,10 +91,10 @@
         por la Red Interamericana de Educación Docente de la OEA, compartiendo experiencias e
         iniciativas innovadoras en educación.
       </p><br>
-          <p class="detalle-lista">✔ Temas: Innovación educativa, tecnología aplicada a la docencia</p>
-          <p class="detalle-lista">✔ Años de participación: 2020, 2021</p>
-          <p class="detalle-lista">✔ Modalidad: Virtual</p>
-          <p class="detalle-lista">✔ Instituciones participantes de diversos países de América</p>
+          <p class="detalle-lista">✔ <b>Temas:</b> Innovación educativa, tecnología aplicada a la docencia</p>
+          <p class="detalle-lista">✔ <b>Años de participación:</b> 2020, 2021</p>
+          <p class="detalle-lista">✔ <b>Modalidad:</b> Virtual</p>
+          <p class="detalle-lista">✔ <b>Instituciones participantes de diversos países de América</b></p>
         </div>
         <div class="columna imagen">
           <img src="../assets/banner07.png" alt="Imagen de ejemplo">
@@ -101,10 +102,10 @@
       </div>
     </section>
 
-        <!-- Sección Una Columna -->
+    <!-- Sección Una Columna -->
     <section class="una-columna">
-      <div class="contenedor">
-        <center><a href="../assets/proyect02.png"><img src="../assets/proyect02.png" width="800px"></a></center>
+      <div class="contenedor" style="text-align:center;">
+        <center><img src="../assets/proyect02.png" alt="Proyecto imagen" class="zoomable" width="800"></center>
       </div>
     </section>
 
@@ -121,8 +122,17 @@
     </div>
   </footer>
 
-  <!-- Notificación flotante -->
-  <div id="notificacion" class="notificacion"></div>
+
+  <!-- Coloca esto AL FINAL del <body>, una sola vez en la página 
+      es quien maneja la apliación de imágenes -->
+  <div id="lightbox" aria-hidden="true" role="dialog" tabindex="-1">
+    <button class="lightbox-close" aria-label="Cerrar">&times;</button>
+    <div class="lightbox-controls">
+      <button class="zoom-btn" id="zoom-in" aria-label="Ampliar">+</button>
+      <button class="zoom-btn" id="zoom-out" aria-label="Reducir">−</button>
+    </div>
+    <img class="lightbox-content" id="lightbox-img" alt="">
+  </div>
 
 </body>
 
