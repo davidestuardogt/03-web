@@ -86,6 +86,7 @@ body {
   color: #D4AF37; /* dorado suave */
 }
 
+/* Estilos de la presentación solo incluida en Index */
 .presentacion {
   padding: 4rem 2rem;
   text-align: center;
@@ -101,7 +102,7 @@ body {
 }
 
 .sobre-mi-texto {
-  max-width: 500px;
+  max-width: 800px;
   text-align: left;
 }
 
@@ -114,6 +115,85 @@ body {
 .sobre-mi-texto p {
   font-size: 1.2rem;
   color: #4A4A4A; /* gris oscuro */
+}
+
+.sobre-mi-imagen img {
+  width: 400px;
+  border-radius: 50%;
+  border: 3px solid #D4AF37; /* dorado */
+}
+
+/* ================= */
+/* Sección Skills */
+/* ================= */
+.skills {
+  padding: 60px 20px;
+  background-color: #F5F5F5; /* Gris claro */
+  text-align: center;
+  border-radius: 16px;
+  margin: 40px auto;
+  max-width: 1200px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.skills h2 {
+  font-size: 2rem;
+  color: #0B2545; /* Azul marino */
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.skills h2::after {
+  content: "";
+  display: block;
+  width: 50%;
+  margin: 8px auto 0;
+  border-bottom: 3px solid #D4AF37; /* Dorado premium */
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  align-items: stretch; /* asegura misma altura */
+}
+
+.skill-item {
+  background: #FFFFFF;
+  padding: 20px;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 160px;
+  min-height: 150px; /* uniformidad en altura */
+
+  display: flex;              /* centrado interno */
+  flex-direction: column;
+  justify-content: center;    /* centra icono y texto verticalmente */
+  align-items: center;        /* centra horizontalmente */
+  text-align: center;
+}
+
+.skill-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4); /* Glow dorado */
+}
+
+.skill-item img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 12px;
+}
+
+.skill-item p {
+  font-size: 0.9rem;
+  color: #4A4A4A; /* Gris oscuro */
+  font-weight: 600;
+  line-height: 1.2;
 }
 
 /* Secciones reutilizables */
@@ -199,11 +279,6 @@ section {
   margin-bottom: 1rem;
 }
 
-.sobre-mi-imagen img {
-  width: 200px;
-  border-radius: 50%;
-  border: 3px solid #D4AF37; /* dorado */
-}
 
 
 /* Footer */
@@ -483,7 +558,7 @@ footer p {
   }
 
   .sobre-mi-imagen img {
-    width: 150px;
+    width: 300px;
   }
 
   .presentacion {
