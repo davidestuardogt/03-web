@@ -280,6 +280,53 @@ section {
 }
 
 
+/* ================= */
+/* Sección Imagen Destacada */
+/* ================= */
+.imagen-destacada {
+  padding: 60px 20px;
+  background-color: #ffffff; /* blanco */
+  border-radius: 16px;
+  border: 2px solid #D4AF37;
+  margin: 40px auto;
+  max-width: 1200px;
+  text-align: center;
+  font-size: 1.2rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.imagen-destacada h2 {
+  font-size: 2rem;
+  color: #0B2545; /* Azul marino */
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.imagen-destacada h2::after {
+  content: "";
+  display: block;
+  width: 50%;
+  margin: 8px auto 0;
+  border-bottom: 3px solid #D4AF37; /* Dorado premium */
+}
+
+/* Imagen centrada y responsive */
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 2px solid #D4AF37;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.responsive-img:hover {
+  transform: scale(1.03); /* ligero zoom al pasar el mouse */
+}
+
 
 /* Footer */
 footer {
