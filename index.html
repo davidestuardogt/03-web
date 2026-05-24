@@ -14,8 +14,27 @@
 </head>
 <body>
 
-   <!-- Header dinámico -->
-  <div id="header"></div>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Profesor David García</div>
+
+      <!-- Botón hamburguesa -->
+  <button class="menu-toggle" aria-label="Abrir menú">
+    &#9776; <!-- este es el ícono de las tres líneas -->
+  </button>
+
+    <!-- Las opciones del menú -->
+      <ul class="nav-links" id="nav-links">
+        <button class="close-menu" aria-label="Cerrar menú">&times;</button>
+        <li><a href="index.html">Sobre mí</a></li>
+        <li><a href="pages/proyects.html">Proyectos</a></li>
+        <li><a href="pages/certified.html">Certificaciones</a></li>
+        <li><a href="pages/students.html">Estudiantes</a></li>
+        <li><a href="pages/multimedia.html">Multimedia</a></li>
+        <li><a href="pages/contact.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <main>
 
@@ -127,7 +146,7 @@
  <!-- Footer dinámico -->
   <div id="footer"></div>
 
-  <script src="../js/include.js"></script>
+  <script src="js/include.js"></script>
 
   <!-- Coloca esto AL FINAL del <body>, una sola vez en la página 
       es quien maneja la apliación de imágenes -->
