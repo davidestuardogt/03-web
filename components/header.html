@@ -1,21 +1,39 @@
-  <header>
-    <nav class="navbar">
-      <div class="logo">Profesor David García</div>
+<header>
+  <nav class="navbar">
+    <a class="logo" href="{{ROOT}}index.html">Profesor David García</a>
 
-      <!-- Botón hamburguesa -->
-  <button class="menu-toggle" aria-label="Abrir menú">
-    &#9776; <!-- este es el ícono de las tres líneas -->
-  </button>
+    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+      &#9776;
+    </button>
 
-    <!-- Las opciones del menú -->
-      <ul class="nav-links" id="nav-links">
+    <ul class="nav-links" id="nav-links">
+      <li class="menu-close-item">
         <button class="close-menu" aria-label="Cerrar menú">&times;</button>
-        <li><a href="../index.html">Sobre mí</a></li>
-        <li><a href="../pages/proyects.html">Proyectos</a></li>
-        <li><a href="../pages/certified.html">Certificaciones</a></li>
-        <li><a href="../pages/students.html">Estudiantes</a></li>
-        <li><a href="../pages/multimedia.html">Multimedia</a></li>
-        <li><a href="../pages/contact.html">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
+      </li>
+      <li><a href="{{ROOT}}index.html">Sobre mí</a></li>
+      <li class="has-submenu">
+        <a href="{{ROOT}}pages/proyects.html" aria-haspopup="true">Proyectos</a>
+        <ul class="submenu">
+          <li><a href="{{ROOT}}pages/proyects.html">Proyectos educativos</a></li>
+          <li><a href="{{ROOT}}pages/certified.html">Certificaciones</a></li>
+          <!-- <li><a href="{{ROOT}}pages/samples.html">Muestras</a></li> -->
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="{{ROOT}}pages/students.html" aria-haspopup="true">Recursos</a>
+        <ul class="submenu">
+          <li><a href="{{ROOT}}pages/students.html">Estudiantes</a></li>
+          <!-- <li><a href="{{ROOT}}pages/samples.html"><li><a href="{{ROOT}}pages/multimedia.html">Multimedia</a></li> -->
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="{{ROOT}}pages/multimedia.html" aria-haspopup="true">Publicaciones</a>
+        <ul class="submenu">
+          <li><a href="{{ROOT}}pages/multimedia.html">Videos</a></li>
+         <!-- <li> <li><a href="{{ROOT}}pages/samples.html">Entradas recientes</a></li> -->
+        </ul>
+      </li>
+      <li><a href="{{ROOT}}pages/contact.html">Contacto</a></li>
+    </ul>
+  </nav>
+</header>

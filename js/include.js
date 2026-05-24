@@ -4,43 +4,34 @@
 // =======================================
 
 document.addEventListener("DOMContentLoaded", () => {
+  const includeScript = document.querySelector('script[src$="include.js"]');
+  const scriptPath = includeScript ? includeScript.getAttribute("src") : "js/include.js";
+  const rootPath = scriptPath.replace(/js\/include\.js$/, "");
+
+  const cargarComponente = (selector, ruta) => {
+    const contenedor = document.getElementById(selector);
+
+    if (!contenedor) {
+      return Promise.resolve();
+    }
+
+    return fetch(`${rootPath}${ruta}`)
+      .then(response => response.text())
+      .then(data => {
+        contenedor.innerHTML = data.replaceAll("{{ROOT}}", rootPath);
+      });
+  };
 
   // ===============================
   // Cargar HEADER
   // ===============================
-  const header = document.getElementById("header");
-
-  if (header) {
-
-    fetch("../components/header.html")
-      .then(response => response.text())
-      .then(data => {
-
-        header.innerHTML = data;
-
-        // Reinicializar menú móvil
-        iniciarMenu();
-
-      });
-
-  }
+  cargarComponente("header", "components/header.html")
+    .then(() => iniciarMenu());
 
   // ===============================
   // Cargar FOOTER
   // ===============================
-  const footer = document.getElementById("footer");
-
-  if (footer) {
-
-    fetch("../components/footer.html")
-      .then(response => response.text())
-      .then(data => {
-
-        footer.innerHTML = data;
-
-      });
-
-  }
+  cargarComponente("footer", "components/footer.html");
 
 });
 
@@ -60,6 +51,7 @@ function iniciarMenu() {
     // Abrir menú
     menuToggle.addEventListener('click', () => {
       navLinks.classList.toggle('active');
+      menuToggle.setAttribute('aria-expanded', navLinks.classList.contains('active'));
     });
 
     // Cerrar menú al hacer clic en enlaces
@@ -67,6 +59,7 @@ function iniciarMenu() {
 
       link.addEventListener('click', () => {
         navLinks.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
       });
 
     });
@@ -74,6 +67,7 @@ function iniciarMenu() {
     // Cerrar menú con X
     closeMenuBtn.addEventListener('click', () => {
       navLinks.classList.remove('active');
+      menuToggle.setAttribute('aria-expanded', 'false');
     });
 
   }
